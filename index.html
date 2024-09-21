@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENDANCE PORTAL SECTION B</title>
+    <style>
+        /* Existing styles... */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.download-btn {
+    background-color: #007bff;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"], input[type="password"], select {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Attendance Portal <br>"Ankur Kaushik"</h2>
+        
+        <select id="subject" required>
+            <option value="">Select Subject</option>
+            <option value="FLAT">FLAT</option>
+            <option value="DAA">DAA</option>
+            <option value="ADV JAVA">ADV JAVA</option>
+            <option value="CG">CG</option>
+            <option value="AI">AI</option>
+        </select>
+
+        <select id="group" required>
+            <option value="">Select Group</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+        </select>
+
+        <input type="text" id="studentName" placeholder="Enter Student Name" required>
+        <input type="text" id="regNo" placeholder="Enter Registration No (Alphanumeric)" required>
+        <button onclick="addRecord()">Add Attendance</button>
+        
+        <h2>Teacher/CR Login</h2>
+        <input type="password" id="teacherMobile" placeholder="Enter Teacher's Mobile No." required>
+        <button class="download-btn" onclick="authenticateAndDownload()">Download Attendance Sheet</button>
+        
+        <button class="download-btn" onclick="downloadMainFile()">Download All Attendance Data</button>
+
+        <h2>CR Direct Download</h2>
+        <select id="crSubject" required>
+            <option value="">Select Subject</option>
+            <option value="FLAT">FLAT</option>
+            <option value="DAA">DAA</option>
+            <option value="ADV JAVA">ADV JAVA</option>
+            <option value="CG">CG</option>
+            <option value="AI">AI</option>
+        </select>
+        <button class="download-btn" onclick="directCRDownload()">CR Download for Subject</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
